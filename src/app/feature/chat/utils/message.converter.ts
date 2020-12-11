@@ -86,7 +86,7 @@ export async function convertQuickReply(choiceString: string): Promise<ChatRespo
 export function applyCustomMessageInfo(urlPartsList: URLParts[], msg: ChatMessage) {
   let msgInfoUrlParts = urlPartsList.find((parts) => parts.path.startsWith("/chat/msg-info"));
   if (msgInfoUrlParts) {
-    const qParams: Object = queryStringToObject(msgInfoUrlParts.query);
+    const qParams = queryStringToObject(msgInfoUrlParts.query);
     for (let customField of appCustomFields) {
       if (qParams.hasOwnProperty(customField.key)) {
         const value = qParams[customField.key];
@@ -191,7 +191,7 @@ export function getURLSInText(text: string): URLParts[] {
   const urls: URLParts[] = [];
   let regexResult: RegExpExecArray;
   while ((regexResult = urlRegex.exec(text))) {
-    let urlParts: URLParts = {
+    const urlParts: URLParts = {
       url: regexResult[0],
       protocol: regexResult.groups.protocol,
       domain: regexResult.groups.domain,

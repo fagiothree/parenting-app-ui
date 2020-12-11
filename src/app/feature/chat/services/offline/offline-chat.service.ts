@@ -8,7 +8,6 @@ import { RapidProOfflineFlow } from "./chat.flow";
 import { ContactFieldService } from "./contact-field.service";
 import { RapidProFlowExport } from "./rapid-pro-export.model";
 import { CONVERSATION } from "src/app/shared/services/data/data.service";
-import { throwError } from "rxjs";
 
 export type FlowStatusChange = {
   name: string;
@@ -91,7 +90,7 @@ export class OfflineChatService implements IChatService {
       console.log("Sending message to current flow ", message, currentFlow.name);
       return currentFlow.sendMessage(message);
     } else {
-      return throwError("No active flows to send a message to");
+      throw new Error("No active flows to send a message to");
     }
   }
 

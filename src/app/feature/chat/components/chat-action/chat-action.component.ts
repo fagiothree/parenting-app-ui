@@ -45,7 +45,7 @@ export class ChatActionComponent implements OnInit {
       };
       return action;
     } else {
-      throw "No chat action with type " + actionType;
+      throw new Error("No chat action with type " + actionType);
     }
   }
 
