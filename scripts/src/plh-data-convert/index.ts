@@ -117,12 +117,12 @@ function mergePLHData(jsons: { json: any; xlsxPath: string }[]) {
           releasedSummary[flow_name] = { status, flow_type, module, filename };
           if (json.hasOwnProperty(flow_name)) {
             if (merged.hasOwnProperty(flow_name)) {
-              console.log(chalk.yellow("duplicate flow:", flow_name));
+              console.log(chalk.bgYellow.black("duplicate flow:", flow_name));
             }
             // console.log(chalk.green("+", flow_name));
             merged[flow_name] = { ...contents, rows: json[flow_name] };
           } else {
-            console.log(chalk.red("No Contents:", flow_name));
+            console.log(chalk.bgYellow.black("No Contents:", flow_name));
           }
         } else {
           skippedSummary[flow_name] = { status, flow_type, module, filename };
