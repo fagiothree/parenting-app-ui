@@ -28,6 +28,7 @@
     <ion-label>Launch Flow</ion-label>
     <ion-select
       *ngIf="flowNames?.length > 0"
+      interface="action-sheet"
       okText="Launch Flow"
       cancelText="Cancel"
       (ionChange)="launchFlowByName($event.detail.value)"
@@ -41,6 +42,7 @@
     <ion-label>Open Tip</ion-label>
     <ion-select
       okText="Open Tip"
+      interface="action-sheet"
       cancelText="Cancel"
       (ionChange)="launchTipFlowByName($event.detail.value)"
     >
