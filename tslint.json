@@ -16,7 +16,7 @@
     "interface-name": false,
     "max-classes-per-file": false,
     "max-line-length": [true, 140],
-    "eofline": true,
+    "eofline": false,
     "member-access": false,
     "import-spacing": true,
     "indent": {
@@ -29,7 +29,10 @@
       }
     ],
     "no-consecutive-blank-lines": false,
-    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+    "no-console": {
+      "severity": "warning",
+      "options": ["debug", "info", "time", "timeEnd", "trace"]
+    },
     "no-empty": false,
     "no-inferrable-types": [false, "ignore-params"],
     "no-non-null-assertion": true,
@@ -41,7 +44,7 @@
     "ordered-imports": false,
     "quotemark": [false],
     "trailing-comma": false,
-    "no-output-on-prefix": true,
+    "no-output-on-prefix": { "severity": "warning" },
     "no-inputs-metadata-property": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
@@ -101,8 +104,15 @@
       ]
     },
     "no-string-literal": false,
-    "prefer-const": false,
+    "prefer-const": { "severity": "warning" },
     "no-namespace": false,
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "no-trailing-whitespace": false,
+    "no-var-keyword": { "severity": "warning" },
+    "no-shadowed-variable": { "severity": "warning" },
+    "object-literal-shorthand": false,
+    "radix": { "severity": "warning" },
+    "no-conditional-assignment": { "severity": "warning" },
+    "use-isnan": { "severity": "warning" }
   }
 }
